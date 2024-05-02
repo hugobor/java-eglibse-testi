@@ -17,10 +17,14 @@ limitations under the License.
 
 package hugobor.javaeglibsetesti;
 
+
 import java.util.List;
+import java.util.stream.IntStream;
+
 
 public class Blabu {
     public static void main(String[] args) {
+	
 	System.out.println("Olá!!!!");
 	
 	
@@ -37,5 +41,40 @@ public class Blabu {
 		List.of("cebola"));
 	
 	System.out.format("Minina: %s%nMenino: %s%n", karin, gaspar);
+	
+	// TODO Otimizar esse loop
+	for (int i : IntStream.range(0, 10).boxed().toList()) {
+	    System.out.println(i);
+	}
+	
+	System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!");
+
+	
+////	var readScan = new Scanner(System.in).useLocale(Locale.of("pt", "BR"));
+//	var readScan = new Scanner(System.in).useLocale(Locale.of("en", "US"));
+//	
+//	double dubl = readScan.nextDouble();
+//	System.out.println(dubl);
     }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
