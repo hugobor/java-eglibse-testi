@@ -17,25 +17,13 @@ limitations under the License.
 
 package hugobor.javaeglibsetesti;
 
+
 import java.util.List;
 
-public class Blabu {
-    public static void main(String[] args) {
-	System.out.println("Olá!!!!");
-	
-	
-	var karin = new Person(
-		"Karin",
-		"Bruxinha fofinha",
-		26,
-		List.of("mandioca", "manga"));
-	
-	var gaspar = new Person(
-		"Gaspar",
-		"Menininho fofo :3",
-		17,
-		List.of("cebola"));
-	
-	System.out.format("Minina: %s%nMenino: %s%n", karin, gaspar);
-    }
+
+public record Person(
+	String name,
+	String descr,
+	int age,
+	List<String> backpack) {
 }

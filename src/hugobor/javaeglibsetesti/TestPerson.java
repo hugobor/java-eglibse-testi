@@ -17,12 +17,19 @@ limitations under the License.
 
 package hugobor.javaeglibsetesti;
 
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.List;
 
-public class Blabu {
-    public static void main(String[] args) {
-	System.out.println("Olá!!!!");
-	
+import org.junit.jupiter.api.Test;
+
+
+class TestPerson {
+
+    @Test
+    void testPersonEquals() {
+	assertTrue(true);
 	
 	var karin = new Person(
 		"Karin",
@@ -36,6 +43,23 @@ public class Blabu {
 		17,
 		List.of("cebola"));
 	
-	System.out.format("Minina: %s%nMenino: %s%n", karin, gaspar);
+	assertFalse(karin.equals(gaspar));
+	assertFalse(karin.equals(gaspar));
+	assertFalse(karin.hashCode() == gaspar.hashCode());
+	
+	var mirrorKarin = new Person(
+		"Karin",
+		"Bruxinha fofinha",
+		26,
+		List.of("mandioca", "manga"));
+	
+	assertTrue(karin.equals(mirrorKarin));
+	assertTrue(mirrorKarin.equals(karin));
+	
+	var blubKarin = new Person(karin.name(), karin.descr(), karin.age(), List.of("mandioca"));
+	
+	assertFalse(karin.equals(blubKarin));
+	assertTrue(karin.name().equals(blubKarin.name()));
     }
+    
 }
